@@ -4,6 +4,6 @@ import (
 	"fmt"
 )
 
-func filename(file string) string {
-	return fmt.Sprintf("%s%s.cache", CACHE_PATH, file)
+func Filename(file string) string {
+	return fmt.Sprintf("%s%s.json", CACHE_PATH, file)
 }
