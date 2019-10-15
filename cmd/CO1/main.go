@@ -1,8 +1,8 @@
 package main
 
 import (
-	"pkg/CO1Cache"
-	"pkg/CO1Handlers"
+	"CLOUD-O1/pkg/CO1Cache"
+	"CLOUD-O1/pkg/CO1Handlers"
 	"fmt"
 	"net/http"
 	"os"
@@ -12,7 +12,6 @@ import (
 func main () {
 
 	CO1Cache.Initialize()
-	fmt.Println("TEST")
 
 	/*
 
@@ -33,7 +32,7 @@ func main () {
 		fmt.Println(string(CO1Cache.Read("test")))
 	}
 	*/
-	port :=os.Getenv("PORT")
+	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}

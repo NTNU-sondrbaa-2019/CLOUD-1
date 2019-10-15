@@ -14,5 +14,5 @@ func Verify(file string) bool {
 		return false
 	}
 
-	return time.Now().Sub(f.ModTime()) < time.Second * CACHE_DURATION
+	return time.Now().Sub(f.ModTime()) < time.Second * time.Duration(_CacheDuration())
 }
