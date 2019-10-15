@@ -15,7 +15,7 @@ func Initialize() {
 }
 
 func Filename(file string) string {
-	return fmt.Sprintf("%s/%s.json", _CachePath(), file)
+	return fmt.Sprintf(_CacheFormat(), _CachePath(), file)
 }
 
 func _CachePath() string {
@@ -36,4 +36,14 @@ func _CacheDuration() int {
 	}
 
 	return cache_duration
+}
+
+func _CacheFormat() string {
+	cache_format := os.Getenv("CACHE_FORMAT")
+
+	if cache_format == "" {
+		cache_format = CACHE_FORMAT
+	}
+
+	return cache_format
 }
