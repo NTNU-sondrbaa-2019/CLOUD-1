@@ -15,12 +15,12 @@ func Write(file string, content []byte) {
 }
 
 func WriteJSON(file string, content interface{}) {
-	j, err := json.Marshal(content)
+	b, err := json.Marshal(content)
 
 	if err != nil {
 		fmt.Printf("Unable to parse JSON: %v\n", err)
 		return
 	}
 
-	Write(file, j)
+	Write(file, b)
 }
