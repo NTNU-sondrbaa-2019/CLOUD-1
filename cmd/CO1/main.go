@@ -3,36 +3,27 @@ package main
 import (
 	"CLOUD-O1/pkg/CO1Cache"
 	"CLOUD-O1/pkg/CO1Handlers"
+	"CLOUD-O1/pkg/CO1Struct"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
-	"log"
 )
 
 func main () {
 
+	diagnostics := CO1Struct.Diagnostics{
+		200,
+		200,
+		"v1",
+		0,
+	}
+
 	CO1Cache.Initialize()
+	CO1Cache.WriteJSON("diagnostics", diagnostics)
 
-	/*
-
-	CACHE TESTING
-
-	type test struct {
-		name string
-		number int
-	}
-
-	heh := &test{
-		name: "test",
-		number: 123,
-	}
-
-	CO1Cache.WriteJSON("test", heh)
-	if CO1Cache.Verify("test") {
-		fmt.Println(string(CO1Cache.Read("test")))
-	}
-	*/
 	port := os.Getenv("PORT")
+
 	if port == "" {
 		port = "8080"
 	}

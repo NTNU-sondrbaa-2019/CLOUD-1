@@ -7,7 +7,7 @@ import (
 )
 
 func Write(file string, content []byte) {
-	err := ioutil.WriteFile(Filename(file), content, 644)
+	err := ioutil.WriteFile(Filename(file), content, 0644)
 
 	if err != nil {
 		fmt.Printf("Unable to write cache file: %v\n", err)
@@ -15,7 +15,7 @@ func Write(file string, content []byte) {
 }
 
 func WriteJSON(file string, content interface{}) {
-	b, err := json.Marshal(content)
+	b, err := json.MarshalIndent(content, "", "	")
 
 	if err != nil {
 		fmt.Printf("Unable to parse JSON: %v\n", err)

@@ -1,9 +1,9 @@
 package CO1Struct
 
 type Country struct {
-	code string
-	countryname string
-	countryflag string
-	species [][]byte
-	speciesKey []int
+	Code 			string		`json:"code"`
+	CountryName 	string		`json:"countryname"`
+	CountryFlag 	string		`json:"countryflag"`
+	Species 		[][]byte	`json:"species"`
+	SpeciesKey 		[]int		`json:"speciesKey"`
 }

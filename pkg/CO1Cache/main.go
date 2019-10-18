@@ -7,7 +7,7 @@ import (
 )
 
 func Initialize() {
-	err := os.MkdirAll(_CachePath(), 755)
+	err := os.MkdirAll(_CachePath(), 0766)
 
 	if err != nil {
 		fmt.Printf("Unable to create cache directory: %v\n", err)
