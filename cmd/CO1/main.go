@@ -1,9 +1,9 @@
 package main
 
 import (
-	"CLOUD-O1/pkg/CO1Cache"
-	"CLOUD-O1/pkg/CO1Handlers"
-	"CLOUD-O1/pkg/CO1Struct"
+	"github.com/NTNU-sondrbaa-2019/CLOUD-O1/pkg/CO1Cache"
+	"github.com/NTNU-sondrbaa-2019/CLOUD-O1/pkg/CO1Handlers"
+	"github.com/NTNU-sondrbaa-2019/CLOUD-O1/pkg/CO1Struct"
 	"fmt"
 	"log"
 	"net/http"
