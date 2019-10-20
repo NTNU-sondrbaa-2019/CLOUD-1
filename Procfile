@@ -1,1 +1,1 @@
-web: bin/CLOUD-O1
+web: bin/CO-1
