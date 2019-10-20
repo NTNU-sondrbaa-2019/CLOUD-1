@@ -1,1 +1,0 @@
-web: bin/CO-1
