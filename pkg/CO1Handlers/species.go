@@ -18,6 +18,8 @@ func HandlerSpecies(w http.ResponseWriter, r *http.Request) {
 	parts := strings.Split(r.URL.Path, "/")
 	speciesKey := parts[len(parts)-1]
 
+	//Checks that
+
 	//Check if this result is in cache
 	if CO1Cache.Verify("specie" + speciesKey) {
 		var speciesOut CO1Struct.Specie
@@ -41,6 +43,12 @@ func HandlerSpecies(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "Bad request species", 400)
 			return
 		}
+
+		if resp.StatusCode != 200 {
+			http.Error(w, "Bad response from GBIF, no species with that key", 400)
+			return
+		}
+
 		dec1 := json.NewDecoder(resp.Body)
 		var responsesGBIF CO1Struct.ResultSpeciesGBIF
 
