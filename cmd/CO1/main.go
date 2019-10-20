@@ -12,7 +12,7 @@ import (
 func main () {
 
 	CO1Handlers.StartUptime()
-	CO1Handlers.SetVersion("v0.1")
+	CO1Handlers.SetVersion("v1.0")
 
 	CO1Cache.Initialize()
 
