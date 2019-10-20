@@ -60,11 +60,6 @@ func HandlerCountry(w http.ResponseWriter, r *http.Request) {
 		dec = json.NewDecoder(resp.Body)
 		var speciesInfo CO1Struct.ResultCountryGBIF
 
-		if len(speciesInfo.ResultArray) == 0 {
-			http.Error(w, "Got empty result from gbif, bad countryCode", 400)
-			return
-		}
-
 		err = dec.Decode(&speciesInfo)
 		if err != nil {
 			http.Error(w, "Could not decode json", 400)
