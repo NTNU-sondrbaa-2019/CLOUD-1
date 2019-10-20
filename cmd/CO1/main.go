@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/NTNU-sondrbaa-2019/CLOUD-O1/pkg/CO1Cache"
 	"github.com/NTNU-sondrbaa-2019/CLOUD-O1/pkg/CO1Handlers"
-	"github.com/NTNU-sondrbaa-2019/CLOUD-O1/pkg/CO1Struct"
 	"fmt"
 	"log"
 	"net/http"
@@ -12,15 +11,10 @@ import (
 
 func main () {
 
-	diagnostics := CO1Struct.Diagnostics{
-		200,
-		200,
-		"v1",
-		0,
-	}
+	CO1Handlers.StartUptime()
+	CO1Handlers.SetVersion("v0.1")
 
 	CO1Cache.Initialize()
-	CO1Cache.WriteJSON("diagnostics", diagnostics)
 
 	port := os.Getenv("PORT")
 
