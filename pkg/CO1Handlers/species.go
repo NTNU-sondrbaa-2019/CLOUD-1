@@ -58,6 +58,11 @@ func HandlerSpecies(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		if len(responsesGBIF.ResultArray) == 0 {
+			http.Error(w, "Got empty result from gbif, bad speciesKey", 400)
+			return
+		}
+
 		//GETs the species name and year information
 		resp, err = http.Get("http://api.gbif.org/v1/species/" + speciesKey + "/name")
 		if err != nil {
